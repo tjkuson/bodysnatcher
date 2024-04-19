@@ -1,0 +1,49 @@
+[project]
+name = "bodysnatcher"
+version = "0.1.0"
+description = "Save objects when an exception occurs using pickle."
+license = { text = "MIT" }
+authors = [
+    { name = "Tom Kuson", email = "mail@tjkuson.me" }
+]
+dependencies = [
+    "typing-extensions>=4.11.0",
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.1.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bodysnatcher"]
+
+[tool.ruff]
+preview = true
+target-version = "py39"
+src = ["src"]
+
+[tool.ruff.lint]
+extend-select = [
+    "B",  # bugbear
+    "I",  # isort
+    "TCH",  # flake8-type-checking
+    "UP",  # pyupgrade
+]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+required-imports = ["from __future__ import annotations"]
+
+[tool.mypy]
+strict = true
