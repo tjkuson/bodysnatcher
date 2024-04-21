@@ -2,6 +2,16 @@
 
 Save objects when an exception occurs using pickle.
 
+## Install
+
+Bodysnatcher is availiable on [PyPI](https://pypi.org/project/bodysnatcher/).
+
+```shell
+python -m pip install bodysnatcher
+```
+
+Python verions 3.9 to 3.12 are supported.
+
 ## What it does
 
 Bodysnatcher dumps frame `locals()` if a context is exitted via an exception.
